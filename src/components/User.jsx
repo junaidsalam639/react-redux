@@ -3,7 +3,6 @@ import { TextField, Button, Table, TableContainer, TableHead, TableBody, TableCe
 import { useDispatch, useSelector } from 'react-redux';
 import { addUser, deleteUser, editUser } from '../reducer/reducer';
 import Swal from 'sweetalert2';
-import { isDisabled } from '@testing-library/user-event/dist/utils';
 
 const User = () => {
   const dispatch = useDispatch();
@@ -15,29 +14,18 @@ const User = () => {
 
   const handleSubmit = () => {
     if (username !== '' && email !== '' && password !== '') {
-      dispatch(addUser({ username, email, password }));
       Swal.fire({
-        icon: 'success',
-        title: 'User Added Successfully',
-        width: 600,
-        padding: '3em',
-        color: 'black',
-        fontWeight: 'bold',
-        background: '#fff',
+        title: "User Added Successfully",
+        icon: "success"
       });
+      dispatch(addUser({ username, email, password }));
       setUsername('');
       setEmail('');
       setPassword('');
     } else {
       Swal.fire({
-        icon: 'error',
-        title: 'Validation Error',
-        text: 'Please fill in all fields',
-        width: 600,
-        padding: '3em',
-        color: 'black',
-        fontWeight: 'bold',
-        background: '#fff',
+        title: "All Input Fill required",
+        icon: "error"
       });
     }
   };

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { addTodo, removeTodo , editTodo } from '../reducer/reducer';
+import { addTodo, removeTodo, editTodo } from '../reducer/reducer';
 import { MdDelete } from "react-icons/md";
 import { FaRegEdit } from "react-icons/fa";
 import { TextField, Button } from '@mui/material';
@@ -18,14 +18,8 @@ const AddTodo = () => {
             setInput('');
         } else {
             Swal.fire({
-                icon: 'error',
-                title: 'Validation Error',
-                text: 'Please fill in all fields',
-                width: 600,
-                padding: '3em',
-                color: 'black',
-                fontWeight: 'bold',
-                background: '#fff',
+                title: "All Input Fill required",
+                icon: "error"
             });
         }
     }
@@ -33,7 +27,7 @@ const AddTodo = () => {
     const handlerEdit = (e) => {
         console.log(e);
         setInput(e.text);
-        dispatch(editTodo({id : e.id , text : e.text}));
+        dispatch(editTodo({ id: e.id, text: e.text }));
     }
 
     return (
