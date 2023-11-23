@@ -44,7 +44,7 @@ export const reducer = createSlice({
         },
         editUser : (state , action) => {
             const { id, updatedUser } = action.payload;
-            const userIndex = state.user.findIndex(user => user.id === id);
+            const userIndex = state.user.findIndex((user) => user.id === id);
              console.log(userIndex);
             if (userIndex !== -1) {
               state.user[userIndex] = {

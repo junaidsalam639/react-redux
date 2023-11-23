@@ -41,6 +41,7 @@ const User = () => {
       email: email,
       password: password,
     };
+    console.log(updatedUserData);
     dispatch(editUser({ id: e.id, updatedUser: updatedUserData }));
   }
 
