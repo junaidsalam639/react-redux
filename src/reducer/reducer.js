@@ -6,29 +6,23 @@ const initialState = {
 }
 
 export const reducer = createSlice({
-    name: 'todo',
+    name: 'user',
     initialState,
     reducers: {
-        addTodo: (state, action) => {
-            const todo = {
-                id: nanoid(),
-                text: action.payload,
-            };
-            state.todo.push(todo);
+        addTodo : (state , action) => {
+            const user = {
+                id : nanoid(),
+                text : action.payload
+            }
+            state.todo.push(user);
         },
-        removeTodo: (state, action) => {
-            state.todo = state.todo.filter((todo) => todo.id !== action.payload);
+        deleteTodo : (state , action) => {
+           state.todo = state.todo.filter((todo) => todo.id !== action.payload);
         },
-        editTodo: (state, action) => {
-            const {id , text} = action.payload;
-            const todoIndex = state.todo.findIndex((todo) => todo.id === id);
-            if(todoIndex !== -1){
-               state.todo[todoIndex] = {
-                ...state.user[todoIndex],
-                ...text
-               }
-            } 
+        editTodo : (state , action) => {
+
         },
+
         addUser : (state , action) => {
             const { username, email, password } = action.payload;
             const user = {
@@ -56,7 +50,7 @@ export const reducer = createSlice({
         }
     });
 
-export const { addTodo, removeTodo  , addUser , deleteUser , editUser , editTodo } = reducer.actions;
+export const { addTodo, deleteTodo  , addUser , deleteUser , editUser , editTodo } = reducer.actions;
 
 export default reducer.reducer;
 
