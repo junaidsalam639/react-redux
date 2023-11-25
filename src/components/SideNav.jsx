@@ -28,9 +28,8 @@ import PersonAdd from '@mui/icons-material/PersonAdd';
 import Settings from '@mui/icons-material/Settings';
 import Logout from '@mui/icons-material/Logout';
 import { Input } from 'antd';
-import Search from 'antd/es/input/Search';
 import NotificationsIcon from '@mui/icons-material/Notifications';
-
+import AcUnitIcon from '@mui/icons-material/AcUnit';
 
 const drawerWidth = 240;
 
@@ -67,8 +66,11 @@ function SideNav(props) {
     const drawer = (
         <div style={{ height: '100vh', backgroundColor: '#182C61' }}>
             <Toolbar />
+            <div style={{textAlign:'start' , marginTop:'-42px' , cursor:'pointer'}}>
+            <h3 className='fw-bold text-light'><AcUnitIcon className='text-light fs-2 mx-2' />Invest Bank</h3>
+            </div>
             <Divider style={{ borderBottom: '2px solid white' }} />
-            <List>
+            <List className='mt-5'>
                 {['Dashboard', 'Analytics', 'Payments', 'Deposits', 'Moneybox', 'Securities'].map((text, index) => (
                     <ListItem key={text} disablePadding>
                         <ListItemButton onClick={() => handlePageClick(text)}>
@@ -119,12 +121,12 @@ function SideNav(props) {
                         <MenuIcon />
                     </IconButton>
                     <Typography className='text-dark' variant="h6" noWrap component="div">
-                    <Input placeholder="Search..." size='large' />
+                        <Input placeholder="Search..." size='large' />
                     </Typography>
                     <Typography variant="h6" noWrap component="div">
                         <React.Fragment>
-                            <Box sx={{ display: 'flex', alignItems: 'center', textAlign: 'center'  }} >
-                        <NotificationsIcon className='text-light fs-2 cursor-pointer' />
+                            <Box sx={{ display: 'flex', alignItems: 'center', textAlign: 'center' }} >
+                                <NotificationsIcon style={{cursor:'pointer'}} className='text-light fs-2 cursor-pointer' />
                                 <Tooltip title="Account settings">
                                     <IconButton
                                         onClick={handleClick}
@@ -149,8 +151,8 @@ function SideNav(props) {
                                     sx: {
                                         overflow: 'visible',
                                         filter: 'drop-shadow(0px 2px 8px rgba(0,0,0,0.32))',
-                                        backgroundColor:'#182C61',
-                                        color:'white',
+                                        backgroundColor: '#182C61',
+                                        color: 'white',
                                         mt: 1.5,
                                         '& .MuiAvatar-root': {
                                             width: 32,
@@ -174,30 +176,30 @@ function SideNav(props) {
                                 }}
                                 transformOrigin={{ horizontal: 'right', vertical: 'top' }}
                                 anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
-                            > 
+                            >
                                 <MenuItem onClick={handleClose}>
                                     <Avatar /> Profile
                                 </MenuItem>
                                 <MenuItem onClick={handleClose}>
                                     <Avatar /> My account
                                 </MenuItem>
-                            <Divider style={{ borderBottom: '2px solid white' }} />
+                                <Divider style={{ borderBottom: '2px solid white' }} />
                                 <MenuItem onClick={handleClose}>
                                     <ListItemIcon>
-                                    <PersonAdd style={{ color: 'white', backgroundColor: 'gray', borderRadius: '50%' , width:30,height:30 }} fontSize="large" className='p-1' />
+                                        <PersonAdd style={{ color: 'white', backgroundColor: 'gray', borderRadius: '50%', width: 30, height: 30 }} fontSize="large" className='p-1' />
 
                                     </ListItemIcon>
                                     Add another account
                                 </MenuItem>
                                 <MenuItem onClick={handleClose}>
                                     <ListItemIcon>
-                                        <Settings style={{ color: 'white', backgroundColor: 'gray', borderRadius: '50%' , width:30,height:30 }} fontSize="large" className='p-1' />
+                                        <Settings style={{ color: 'white', backgroundColor: 'gray', borderRadius: '50%', width: 30, height: 30 }} fontSize="large" className='p-1' />
                                     </ListItemIcon>
                                     Settings
                                 </MenuItem>
                                 <MenuItem onClick={handleClose}>
                                     <ListItemIcon>
-                                        <Logout style={{ color: 'white', backgroundColor: 'gray', borderRadius: '50%' , width:30,height:30 }} fontSize="large" className='p-1' />
+                                        <Logout style={{ color: 'white', backgroundColor: 'gray', borderRadius: '50%', width: 30, height: 30 }} fontSize="large" className='p-1' />
                                     </ListItemIcon>
                                     Logout
                                 </MenuItem>

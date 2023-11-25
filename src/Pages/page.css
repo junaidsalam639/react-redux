@@ -1,0 +1,8 @@
+.margin{
+    margin-left: 250px;
+}
+@media(max-width:599px){
+    .margin{
+        margin-left: auto;
+    }
+}

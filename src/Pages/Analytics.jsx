@@ -1,17 +1,26 @@
-import React, { useState } from 'react';
-import { EditOutlined, EllipsisOutlined, SettingOutlined } from '@ant-design/icons';
-import { Avatar, Card } from 'antd';
+import React from 'react';
+import './page.css'
 import SideNav from '../components/SideNav';
-const { Meta } = Card;
+import Card_Card from '../components/Card';
 
 const Aanalytics = () => {
     return (
         <>
-        <div>
-         <SideNav />
-      <h1 className='text-center'>Aanalytics</h1>
-    </div>
-          
+            <SideNav />
+            <div className='margin'>
+                <h1 className='text-center'>Aanalytics</h1>
+                <div className="container">
+                    <div className="row">
+                        <div className="col-lg-12 mx-auto d-flex justify-content-around gap-20 flex-wrap items-center">
+                            <Card_Card />
+                            <Card_Card />
+                            <Card_Card />
+                            <Card_Card />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </>
     )
 }
