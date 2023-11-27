@@ -63,12 +63,14 @@ function SideNav(props) {
         navigate(`/${page}`, { replace: true });
     };
 
+
+
     const drawer = (
         <div style={{ height: '100vh', backgroundColor: '#182C61' }}>
             <Toolbar />
-            <div style={{textAlign:'start' , marginTop:'-42px' , cursor:'pointer'}}>
-            <h3 className='fw-bold text-light'><AcUnitIcon className='text-light fs-2 mx-2' />Invest Bank</h3>
-            </div>
+            <ListItemButton onClick={() => navigate('/')} style={{ textAlign: 'start', marginTop: '-65px', cursor: 'pointer' }}>
+                <h3 className='fw-bold text-light pt-2'><AcUnitIcon className='text-light fs-2 mx-1' />Invest Bank</h3>
+            </ListItemButton>
             <Divider style={{ borderBottom: '2px solid white' }} />
             <List className='mt-5'>
                 {['Dashboard', 'Analytics', 'Payments', 'Deposits', 'Moneybox', 'Securities'].map((text, index) => (
@@ -126,7 +128,7 @@ function SideNav(props) {
                     <Typography variant="h6" noWrap component="div">
                         <React.Fragment>
                             <Box sx={{ display: 'flex', alignItems: 'center', textAlign: 'center' }} >
-                                <NotificationsIcon style={{cursor:'pointer'}} className='text-light fs-2 cursor-pointer' />
+                                <NotificationsIcon style={{ cursor: 'pointer' }} className='text-light fs-2 cursor-pointer' />
                                 <Tooltip title="Account settings">
                                     <IconButton
                                         onClick={handleClick}
@@ -244,6 +246,9 @@ function SideNav(props) {
                 sx={{ flexGrow: 1, p: 3, width: { sm: `calc(100% - ${drawerWidth}px)` } }}
             >
                 <Toolbar />
+                {/* <Typography paragraph>
+                    <h1>Home Page</h1>
+                </Typography> */}
             </Box>
         </Box>
     );

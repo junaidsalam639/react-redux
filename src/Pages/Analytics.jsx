@@ -11,7 +11,9 @@ const Aanalytics = () => {
                 <h1 className='text-center'>Aanalytics</h1>
                 <div className="container">
                     <div className="row">
-                        <div className="col-lg-12 mx-auto d-flex justify-content-around gap-20 flex-wrap items-center">
+                        <div className="col-lg-12 mx-auto d-flex justify-content-around flex-wrap items-center">
+                            <Card_Card />
+                            <Card_Card />
                             <Card_Card />
                             <Card_Card />
                             <Card_Card />
